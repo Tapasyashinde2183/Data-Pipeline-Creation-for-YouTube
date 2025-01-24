@@ -1,0 +1,43 @@
+1. Install Dependencies
+Install all required libraries using the requirements.txt file:
+
+!pip install -r requirements.txt
+
+2. Import Libraries
+Import essential Python libraries like:
+
+yt_dlp: For downloading YouTube videos.
+os: For file system operations.
+whisper: For audio transcription.
+langdetect: To detect the language of transcribed text.
+requests and BeautifulSoup: For web scraping.
+json: To handle JSON data.
+3. Download YouTube Video
+Define a function download_youtube_video to download a YouTube video using yt_dlp. Videos are saved to the ./videos directory.
+
+4. Open Files
+Define helper functions:
+
+startfile: To open a file using the operating system.
+create_and_open_txt: To create and write text to a .txt file and open it.
+5. Get YouTube Video Title
+Scrape the webpage of the provided URL using requests and BeautifulSoup.
+Extract and process the video title to use it as the file name.
+6. Download the Video
+Call the download_youtube_video function with the provided URL to save the YouTube video locally.
+
+7. Extract Audio from Video
+Use moviepy.editor to load the video file.
+Extract the audio from the video and save it as a .wav file for transcription.
+8. Transcribe Audio to Text
+Use the Whisper model (base variant) to transcribe the audio file into text.
+Print the transcribed text for verification.
+9. Detect Language
+Use the langdetect library to detect the language of the transcribed text and print the detected language.
+
+10. Save Transcription to a File
+Use create_and_open_txt to save the transcription in a .csv file, with the filename indicating the detected language.
+11. Append Data to JSON
+Load existing data from a sample.json file.
+Append the transcription data with fields like "Date," "Reference URL," "Hook," "Build Up," "Body," and "CTA."
+Save the updated JSON back to sample.json.
